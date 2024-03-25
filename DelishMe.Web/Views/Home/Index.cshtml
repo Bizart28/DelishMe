@@ -1,33 +1,124 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!DOCTYPE html>
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+        <div class="text-box">
+            <h1>Moldova's first home food shop</h1>
+            <p>Покупка домашней еды станет намного легче с нашим сайтом бла-бла-бла</p> <!--если надо будет добавить лайн брейк то использовать <br>-->
+            <a href="" class="hero-btn">Visit us to know more</a>
+        </div>
+    
+
+    <!--course-->
+    <section class="course">
+        <h1>Что вы можете найти на нашем сайте</h1> <!---было так    Courses we offer-->
+        <p>Kakaya-to vajnaya</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>Еще много надписей</p>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Еще много надписей</p>
+            </div>
+            <div class="course-col">
+                <h3>Postgrraduation</h3>
+                <p>Еще много надписей</p>
+            </div>
+        </div>
     </section>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <!--campus----->
+    <section class="campus">
+        <h1>Our global campus</h1>
+        <p>dfgyjhufgcfxgahdt</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="~/images/food1.JPG"> <!---ZAMENIT-->
+                <div class="layer">
+                    <h3>eda1</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="~/images/food2.JPG"> <!---ZAMENIT-->
+                <div class="layer">
+                    <h3>eda2</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="~/images/food3.JPG"> <!---ZAMENIT-->
+                <div class="layer">
+                    <h3>eda3</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--facilities-->
+    <section class="facilities">
+        <h1>Our facilities</h1>
+        <p>dfrdfjkhghfgfhd</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="~/images/foodnvase.JPG">
+                <h3>World class library</h3>
+                <p>fdgfjgbjkdsgsdkb</p>
+            </div>
+            <div class="facilities-col">
+                <img src="~/images/—Pngtree—valentine's day 3d stereo love_5670923.png">
+                <h3>largest lksdfhjgljs</h3>
+                <p>fdgfjgbjkdsgsdkb</p>
+            </div>
+            <div class="facilities-col">
+                <img src="~/images/foodnvase.JPG">
+                <h3>World class library</h3>
+                <p>fdgfjgbjkdsgsdkb</p>
+            </div>
+        </div>
+
+        <!--testimonials можно вставить наши с артемом фотки))))-->
+        <section class="testimonials">
+            <h1>What our strejsakdfksb</h1>
+            <p>jljfdgnjksdg</p>
+            <div class="row">
+                <div class="testimonials-col">
+                    <img src="~/images/banner.png">
+                    <div>
+                        <p>jlkfghjkdhgjksdkgh</p>
+                        <h3>LIZA Users name skjgfhskdgk</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <!--иконки не отображаются -->
+                    </div>
+                </div>
+                <div class="testimonials-col">
+                    <img src="~/images/banner.JPG">
+                    <div>
+                        <p>jlkfghjkdhgjksdkgh</p>
+                        <h3>ARTEM Users name skjgfhskdgk</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <!--иконки не отображаются -->
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
-</main>
+    </section>
+
+    <!--Call to action-->
+    <section class="cta">
+        <h1>Enroll for our <br> ssjdhfkjdshgkh</h1>
+        <a href="" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!--footer-->
+
+

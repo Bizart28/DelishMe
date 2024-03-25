@@ -1,39 +1,55 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <title>DelishMe</title>
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+    <section class="header">
+        <nav>
+            <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <box-icon name='window-close'></box-icon><!--заменить иконки-->
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">MY DISHES</a></li>
+                    <li><a href="">TOP RECIPES</a></li>
+                    <li><a href="">ORDER</a></li>
+                    <li><a href="">SAVED ITEMS</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CHAT</a></li>
+                    <li><a href="">FAQ</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> <!--заменить иконки-->
+        </nav>
+    </section>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- Область, где будет вставлено содержимое каждого конкретного представления -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>sdijgsdghsdhgkgjkdsg <br>sdlgjusdguhdsgh</p>
+        <div class="icons">
+            <!--добавить иконки для инсты и соцсетей-->
+            <i class="fa fa-facebook"></i>
+            <i class="bx bx-shopping-bags nav__logo-icon bx-xl"></i>
+            <i class="fa fa-telegram"></i>
+        </div>
+        <p>Made with <box-icon name='heart'></box-icon> by Liza and Artiom</p>
+    </section>
+
+    <script src="~/Scripts/index.js"></script>
 </body>
 </html>
