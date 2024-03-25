@@ -29,13 +29,23 @@
                 <div class="nav-links" id="navLinks">
                     <box-icon name='window-close'></box-icon><!--заменить иконки-->
 
-                    <h11>@ViewBag.Title</h11>
+                    <h1>@ViewBag.Title</h1>
                     <section class="left">
-                        <div><a href="/">HOME</a> | <a href="/">MY DISHES</a> | <a href="/">TOP RECIPIES</a> | <a href="/">ORDER</a> | <a href="/">SAVED ITEMS</a> | <a href="/">FAQ</a></div>
+                        <ul>
+                            <li><a href="/">HOME</a></li>
+                            <li><a href="/">MY DISHES</a></li>
+                            <li><a href="/">TOP RECIPIES</a></li>
+                            <li><a href="/">ORDER</a></li>
+                            <li><a href="/">SAVED ITEMS</a></li>
+                            <li><a href="/">FAQ</a></li>
+                        </ul>
                     </section>
                     <section class="right">
-                        <h22>@ViewBag.Title</h22>
-                        <div><a href="/">Sign up</a> | <a href="/">Log in</a></div>
+                        <h2>@ViewBag.Title</h2>
+                        <ul>
+                            <li><a href="/">Sign up</a></li>
+                            <li><a href="/">Log in</a></li>
+                        </ul>
                     </section>
 
 
@@ -58,7 +68,7 @@
                 <i class="bx bx-shopping-bags nav__logo-icon bx-xl"></i>
                 <i class="fa fa-telegram"></i>
             </div>
-            <p>Made with <box-icon name='heart'></box-icon> by Liza and Artiom</p>
+            <p>Made <box-icon name='heart'></box-icon> by Liza and Artiom</p>
         </div>
 
         <script src="~/Scripts/index.js"></script>
