@@ -12,7 +12,7 @@ namespace DelishMe.Web.Controllers
         // GET: Dishes
         public ActionResult Random()
         {
-            var dish = new Dish() { Name = "Мамалыга" };
+            var dish = new Dish() { Name = "Мамалыга", Description = "Vkusno pizdec"};
             return View(dish);
         }
     }

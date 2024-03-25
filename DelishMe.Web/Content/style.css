@@ -6,13 +6,43 @@
   font-weight: 700;
   font-style: normal;
 }
-.header{
-    min-height: 100vh;
+.header {
+    min-height: 5vh;
     width: 100%;
-    background-image: linear-gradient(rgba(243, 209, 209, 0.7), rgba(41, 46, 41, 0.7)), url(images/banner.JPG); /*ZAMENITI*/
-    background-position: center;
-    background-size: cover;
+    background-image: linear-gradient(rgba(252, 237, 215, 0.7), rgba(245, 215, 252, 0.7)); /*ZAMENITI*/
+    background-position: top;
+    background-size:cover;
+    background-repeat:no-repeat;
     position: relative;
+}
+
+
+
+.layout {
+    background: rgb(252, 237, 215);
+}
+
+.left{
+    float:left;
+}
+
+.right{
+    float:right;
+}
+
+
+.homepage {
+    background-image: linear-gradient(rgb(37, 34, 28, 0,90), rgb(6, 15, 34, 0,90));
+}
+
+.home {
+    background-image: linear-gradient(rgba(252, 252, 252,0.8),rgba(252, 252, 252,0.8)),url(../images/banner3.jpg);
+    background-size:cover;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    clear:both;
 }
 nav{
 display: flex;
@@ -71,11 +101,11 @@ font-size: 62px;
     font-size: 14px;
     color: azure;
 }
-.hero-btn{
+.hero-btn {
     display: inline-block;
     text-decoration: none;
-    color: aliceblue;
-    border: 1px solid #fff;
+    color: black;
+    border: 2px solid #3c0fae;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
@@ -83,7 +113,7 @@ font-size: 62px;
     cursor: pointer;
 }
 .hero-btn:hover{
-    border: 1px solid #3c0fae;
+    border: 2px solid #3c0fae;
     background: #3c0fae;
     transition: 1s;
 }
@@ -321,7 +351,7 @@ display: block;
 .cta{
     margin: 100px auto;
     width: 80%;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/foodnvase.JPG);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/foodnvase.JPG);
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -349,6 +379,7 @@ display: block;
     width: 100%;
     text-align: center;
     padding: 30px 0;
+    background: pink; /*zameniti*/
 
 }
 .footer h4{

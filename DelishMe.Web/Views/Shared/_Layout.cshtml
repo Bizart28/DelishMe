@@ -11,45 +11,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    
+
+       
 </head>
+
+
+
 <body>
-    <section class="header">
-        <nav>
-            <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a>
-            <div class="nav-links" id="navLinks">
-                <box-icon name='window-close'></box-icon><!--заменить иконки-->
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">MY DISHES</a></li>
-                    <li><a href="">TOP RECIPES</a></li>
-                    <li><a href="">ORDER</a></li>
-                    <li><a href="">SAVED ITEMS</a></li>
-                    <li><a href="">BLOG</a></li>
-                    <li><a href="">CHAT</a></li>
-                    <li><a href="">FAQ</a></li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i> <!--заменить иконки-->
-        </nav>
-    </section>
 
-    <!-- Область, где будет вставлено содержимое каждого конкретного представления -->
-    <main>
-        @RenderBody()
-    </main>
 
-    <section class="footer">
-        <h4>About Us</h4>
-        <p>sdijgsdghsdhgkgjkdsg <br>sdlgjusdguhdsgh</p>
-        <div class="icons">
-            <!--добавить иконки для инсты и соцсетей-->
-            <i class="fa fa-facebook"></i>
-            <i class="bx bx-shopping-bags nav__logo-icon bx-xl"></i>
-            <i class="fa fa-telegram"></i>
+        <div class="header">
+            <nav>
+                
+                    <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <box-icon name='window-close'></box-icon><!--заменить иконки-->
+
+                    <h11>@ViewBag.Title</h11>
+                    <section class="left">
+                        <div><a href="/">HOME</a> | <a href="/">MY DISHES</a> | <a href="/">TOP RECIPIES</a> | <a href="/">ORDER</a> | <a href="/">SAVED ITEMS</a> | <a href="/">FAQ</a></div>
+                    </section>
+                    <section class="right">
+                        <h22>@ViewBag.Title</h22>
+                        <div><a href="/">Sign up</a> | <a href="/">Log in</a></div>
+                    </section>
+
+
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i> <!--заменить иконки-->
+            </nav>
         </div>
-        <p>Made with <box-icon name='heart'></box-icon> by Liza and Artiom</p>
+
+        <!-- Область, где будет вставлено содержимое каждого конкретного представления -->
+        <main>
+            @RenderBody()
+        </main>
+
+        <div class="footer">
+            <h4>About Us</h4>
+            <p>sdijgsdghsdhgkgjkdsg <br>sdlgjusdguhdsgh</p>
+            <div class="icons">
+                <!--добавить иконки для инсты и соцсетей-->
+                <i class="fa fa-facebook"></i>
+                <i class="bx bx-shopping-bags nav__logo-icon bx-xl"></i>
+                <i class="fa fa-telegram"></i>
+            </div>
+            <p>Made with <box-icon name='heart'></box-icon> by Liza and Artiom</p>
+        </div>
+
+        <script src="~/Scripts/index.js"></script>
+
     </section>
 
-    <script src="~/Scripts/index.js"></script>
 </body>
+
 </html>
