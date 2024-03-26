@@ -47,5 +47,11 @@
     <Folder Include="Core\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DelishMe.Domain\DelishMe.Domain.csproj">
+      <Project>{812d10c9-445d-45b8-ad60-8ceec84d8b18}</Project>
+      <Name>DelishMe.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

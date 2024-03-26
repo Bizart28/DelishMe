@@ -47,5 +47,11 @@
     <Folder Include="Entities\" />
     <Folder Include="Enums\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DelishMe.Helpers\DelishMe.Helpers.csproj">
+      <Project>{513027cc-c182-4d82-9d29-577cdbcbe102}</Project>
+      <Name>DelishMe.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
