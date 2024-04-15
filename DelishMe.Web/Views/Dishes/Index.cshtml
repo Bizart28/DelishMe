@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DelishMe.Web.Models.Dish>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dishes</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Dish</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dish in Model)
+        {
+            <tr>
+                <td>@dish.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
