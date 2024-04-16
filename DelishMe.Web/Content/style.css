@@ -440,3 +440,28 @@ h3 {
 .fa-heart-o {
     color: pink;
 }
+
+
+
+
+/*      FAQ      */
+
+
+
+.faq1 {
+    text-align:center;
+    background-image: radial-gradient(rgba(235, 14, 51, 0.3),rgba(235, 146, 14, 0.3));
+    background-position: center;
+    background-size: cover;
+    background-size: auto;
+}
+
+.question {
+    cursor: pointer;
+    font-weight: bold;
+    color: blue;
+}
+
+.answer {
+    display: none;
+}
