@@ -168,6 +168,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404181243028_InitialModel.cs" />
+    <Compile Include="Migrations\202404181243028_InitialModel.designer.cs">
+      <DependentUpon>202404181243028_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Dish.cs" />
@@ -331,6 +336,11 @@
       <Project>{c9fd3609-3ce5-43bb-8af3-4b49cd867069}</Project>
       <Name>DelishMe.BusinessLogic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202404181243028_InitialModel.resx">
+      <DependentUpon>202404181243028_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
