@@ -9,5 +9,8 @@ namespace DelishMe.Web.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }   
+        public bool IsSubcribedToNewsLetter { get; set; }
+        public  MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
     }
 }
