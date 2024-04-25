@@ -16,7 +16,8 @@
         @foreach (var dish in Model)
         {
             <tr>
-                <td>@dish.Name</td>
+                <td>@Html.ActionLink(dish.Name, "Details", "Dishes", new { id = dish.Id }, null)</td>
+                <td>@dish.Category.Name</td>
             </tr>
         }
     </tbody>

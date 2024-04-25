@@ -5,26 +5,42 @@ using System.Web;
 using System.Web.Mvc;
 using DelishMe.Web.Models;
 using DelishMe.Web.ViewModels;
+using System.Data.Entity;
+
 
 namespace DelishMe.Web.Controllers
 {
     public class DishesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public DishesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         public ViewResult Index()
         {
-            var dishes = GetDishes();
+            var dishes = _context.Dishes.Include(m => m.Category).ToList();
 
             return View(dishes);
         }
 
-        private IEnumerable<Dish> GetDishes()
+        public ActionResult Details(int id)
         {
-            return new List<Dish>
-            {
-                new Dish { Id = 1, Name = "Мамалыга" },
-                new Dish { Id = 2, Name = "Котлеты" }
-            };
+           
+            var dish = _context.Dishes.Include(m => m.Category).SingleOrDefault(m => m.Id == id);
+
+            if (dish == null)
+                return HttpNotFound();
+
+            return View(dish);
+
         }
+
 
         // GET: Dishes
         public ActionResult Random()

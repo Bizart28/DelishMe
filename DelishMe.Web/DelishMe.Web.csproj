@@ -200,8 +200,17 @@
     <Compile Include="Migrations\202404241521427_BirthDateToCustomer.designer.cs">
       <DependentUpon>202404241521427_BirthDateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404250934266_AddDishCategory.cs" />
+    <Compile Include="Migrations\202404250934266_AddDishCategory.designer.cs">
+      <DependentUpon>202404250934266_AddDishCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404250937235_Category.cs" />
+    <Compile Include="Migrations\202404250937235_Category.designer.cs">
+      <DependentUpon>202404250937235_Category.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -329,6 +338,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Dishes\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404241521427_BirthDateToCustomer.resx">
       <DependentUpon>202404241521427_BirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404250934266_AddDishCategory.resx">
+      <DependentUpon>202404250934266_AddDishCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404250937235_Category.resx">
+      <DependentUpon>202404250937235_Category.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
