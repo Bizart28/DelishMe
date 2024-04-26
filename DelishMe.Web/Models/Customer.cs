@@ -10,7 +10,7 @@ namespace DelishMe.Web.Models
     public class Customer
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }   
         public bool IsSubscribedToNewsLetter { get; set; }
@@ -19,6 +19,7 @@ namespace DelishMe.Web.Models
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
         [Display(Name = "Date of Birth")]
+        [_18YearsValidation]
         public DateTime? Birthdate { get; set; }
 
     }

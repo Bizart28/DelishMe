@@ -217,6 +217,7 @@
       <DependentUpon>202404251330316_renamingIsSubscribedToNewsLetter.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\18YearsValidation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
