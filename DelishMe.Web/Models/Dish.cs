@@ -17,5 +17,6 @@ namespace DelishMe.Web.Models
         public Category Category { get; set; }
         public byte CategoryId { get; set; }  
         public DateTime DateAdded { get; set; }
+        public string ImagePath { get; set; }
     }
 }

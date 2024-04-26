@@ -22,6 +22,7 @@ namespace DelishMe.Web.Models
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Dish> Dishes { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
