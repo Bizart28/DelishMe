@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using DelishMe.Web.Models;
@@ -11,16 +12,37 @@ namespace DelishMe.Web.ViewModels
         {
         public IEnumerable<Category> Categories { get; set; }
         public Dish Dish { get; set; }
+        public int? Id { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Description { get; set; }
+        [Display(Name = "Category")]
+        [Required]
+        public byte? CategoryId { get; set; }
         public string Title
         {
             get
             {
-                if (Dish != null && Dish.Id != 0)
-                    return "Edit Dish";
-
-                return "New Dish";
+                return Id != 0 ? "Edit Dish" : "New Dish";
             }
         }
-    
-}
+        public DishFormViewModel()
+        {
+            Id = 0;
+        }
+
+        public DishFormViewModel(Dish dish)
+        {
+            Id = dish.Id;
+            Name = dish.Name;
+            CategoryId = dish.CategoryId;
+            Description = dish.Description;
+        }
+
+    }
 }

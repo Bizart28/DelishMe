@@ -78,17 +78,27 @@ namespace DelishMe.Web.Controllers
             if (dish == null)
                 return HttpNotFound();
 
-            var viewModel = new DishFormViewModel
+            var viewModel = new DishFormViewModel(dish)
             {
-                Dish = dish,
-                Categories = _context.Categories
+                Categories = _context.Categories.ToList(),
             };
+          
 
             return View("DishForm", viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Dish dish)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new DishFormViewModel(dish)
+                {
+                    Categories = _context.Categories.ToList()
+                };
+
+                return View("DishForm", viewModel);
+            }
             if (dish.Id == 0)
             {
                 dish.DateAdded = DateTime.Now;
