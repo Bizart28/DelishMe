@@ -13,7 +13,7 @@ namespace DelishMe.Web.Models
         [StringLength(255)]
         public string Name { get; set;}
         public string Description { get; set;}
-        [Required]
+
         public Category Category { get; set; }
         public byte CategoryId { get; set; }  
         public DateTime DateAdded { get; set; }

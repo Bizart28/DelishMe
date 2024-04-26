@@ -1,0 +1,30 @@
+﻿
+@model DelishMe.Web.ViewModels.DishFormViewModel
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Dishes"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dish.Name)
+        @Html.TextBoxFor(m => m.Dish.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dish.Description)
+        @Html.TextBoxFor(m => m.Dish.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dish.CategoryId)
+        @Html.DropDownListFor(m => m.Dish.CategoryId, new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Dish.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+

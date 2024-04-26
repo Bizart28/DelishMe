@@ -16,9 +16,9 @@ namespace DelishMe.Web.ViewModels
             get
             {
                 if (Dish != null && Dish.Id != 0)
-                    return "Edit Movie";
+                    return "Edit Dish";
 
-                return "New Movie";
+                return "New Dish";
             }
         }
     
