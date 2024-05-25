@@ -12,6 +12,18 @@
 @using (Html.BeginForm("Save", "Dishes"))
 {
     @Html.ValidationSummary(true, "Please fix the following errors.")
+    <head>
+        <style>
+
+            .field-validation-error {
+                color: red;
+            }
+
+            .input-validation-error {
+                border: 2px solid red;
+            }
+        </style>
+    </head>
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })

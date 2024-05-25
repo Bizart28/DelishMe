@@ -11,12 +11,11 @@ namespace DelishMe.Web.ViewModels
     
         {
         public IEnumerable<Category> Categories { get; set; }
-        public Dish Dish { get; set; }
         public int? Id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string Name { get; set; }
+        public string Name { get; set; }    
 
         [Required]
         [StringLength(255)]
