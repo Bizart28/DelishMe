@@ -17,7 +17,7 @@ namespace DelishMe.Web.Dtos
         public bool IsSubscribedToNewsLetter { get; set; }
         [ForeignKey("MembershipType")]
         public byte MembershipTypeId { get; set; }
-        [_18YearsValidation]
+       //[_18YearsValidation]
         public DateTime? Birthdate { get; set; }
     }
 }
