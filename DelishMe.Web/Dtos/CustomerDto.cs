@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using DelishMe.Web.Models;
 
 namespace DelishMe.Web.Dtos
 {
@@ -19,5 +18,6 @@ namespace DelishMe.Web.Dtos
         public byte MembershipTypeId { get; set; }
        //[_18YearsValidation]
         public DateTime? Birthdate { get; set; }
+        public MembershipTypeDto MembershipType { get; set; }
     }
 }
