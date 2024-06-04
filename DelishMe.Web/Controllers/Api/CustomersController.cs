@@ -7,6 +7,7 @@ using System.Web.Http;
 using AutoMapper;
 using DelishMe.Web.Dtos;
 using DelishMe.Web.Models;
+using System.Data.Entity;
 using Microsoft.Owin.Security.OAuth;
 
 namespace DelishMe.Web.Controllers.Api
