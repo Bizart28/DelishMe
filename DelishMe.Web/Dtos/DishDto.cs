@@ -14,8 +14,8 @@ namespace DelishMe.Web.Dtos
         [StringLength(255)]
         public string Name { get; set; }
         public string Description { get; set; }
-        public Category Category { get; set; }
         public byte CategoryId { get; set; }
+        public CategoryDto Category { get; set; }  
         public DateTime DateAdded { get; set; }
         public string ImagePath { get; set; }
     }

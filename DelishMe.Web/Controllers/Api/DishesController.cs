@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
 using DelishMe.Web.Dtos;
+using System.Data.Entity;
 using DelishMe.Web.Models;
 
 namespace DelishMe.Web.Controllers.Api
@@ -21,7 +22,10 @@ namespace DelishMe.Web.Controllers.Api
 
         public IEnumerable<DishDto> GetDishes()
         {
-            return _context.Dishes.ToList().Select(Mapper.Map<Dish, DishDto>);
+            return _context.Dishes
+                .Include(m => m.Category)
+                .ToList()
+                .Select(Mapper.Map<Dish, DishDto>);
         }
 
         public IHttpActionResult GetDish(int id)

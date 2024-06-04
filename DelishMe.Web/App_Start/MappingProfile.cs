@@ -16,6 +16,7 @@ namespace DelishMe.Web.App_Start
             Mapper.CreateMap<CustomerDto, Customer>();
             Mapper.CreateMap<Dish, DishDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Category, CategoryDto>();
 
 
             // Dto to Domain

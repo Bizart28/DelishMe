@@ -25,9 +25,7 @@ namespace DelishMe.Web.Controllers
         }
         public ViewResult Index()
         {
-            var dishes = _context.Dishes.Include(m => m.Category).ToList();
-
-            return View(dishes);
+            return View();
         }
 
         public ActionResult Details(int id)
