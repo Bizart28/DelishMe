@@ -54,15 +54,15 @@ namespace DelishMe.Web
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "864392312371986",
+               appSecret: "dfe400e1433b1fbfb527835aaf07dd50");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "123456",
+                ClientSecret = "abcdef"
+            });
         }
     }
 }
