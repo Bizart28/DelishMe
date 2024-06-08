@@ -39,6 +39,7 @@ namespace DelishMe.Web.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageDishes)]
         public IHttpActionResult CreateDish(DishDto dishDto)
         {
             if (!ModelState.IsValid)
@@ -53,6 +54,7 @@ namespace DelishMe.Web.Controllers.Api
         }
 
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageDishes)]
         public IHttpActionResult UpdateDish(int id, DishDto dishDto)
         {
             if (!ModelState.IsValid)
@@ -71,6 +73,7 @@ namespace DelishMe.Web.Controllers.Api
         }
 
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageDishes)]
         public IHttpActionResult DeleteDish(int id)
         {
             var dishInDb = _context.Dishes.SingleOrDefault(c => c.Id == id);

@@ -25,7 +25,9 @@ namespace DelishMe.Web.Controllers
         }
         public ViewResult Index()
         {
-            return View();
+            if (User.IsInRole("CanManageDishes")) return View("List");
+            else return View("ReadOnlyList");
+
         }
 
         public ActionResult Details(int id)
@@ -42,6 +44,7 @@ namespace DelishMe.Web.Controllers
 
 
         // GET: Dishes
+        
         public ActionResult Random()
         {
             var dish = new Dish() { Name = "Мамалыга"};
@@ -57,6 +60,8 @@ namespace DelishMe.Web.Controllers
             };
             return View(viewModel);
         }
+
+        [Authorize(Roles = RoleName.CanManageDishes)]
         public ViewResult New()
         {
             var categories = _context.Categories.ToList();
@@ -69,6 +74,7 @@ namespace DelishMe.Web.Controllers
             return View("DishForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageDishes)]
         public ActionResult Edit(int id)
         {
             var dish = _context.Dishes.SingleOrDefault(c => c.Id == id);
@@ -84,6 +90,8 @@ namespace DelishMe.Web.Controllers
 
             return View("DishForm", viewModel);
         }
+
+        [Authorize(Roles = RoleName.CanManageDishes)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Dish dish)
