@@ -255,6 +255,10 @@
     <Compile Include="Migrations\202404251330316_renamingIsSubscribedToNewsLetter.designer.cs">
       <DependentUpon>202404251330316_renamingIsSubscribedToNewsLetter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406081636445_SeedUsers.cs" />
+    <Compile Include="Migrations\202406081636445_SeedUsers.designer.cs">
+      <DependentUpon>202406081636445_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\18YearsValidation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -639,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404251330316_renamingIsSubscribedToNewsLetter.resx">
       <DependentUpon>202404251330316_renamingIsSubscribedToNewsLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406081636445_SeedUsers.resx">
+      <DependentUpon>202406081636445_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
