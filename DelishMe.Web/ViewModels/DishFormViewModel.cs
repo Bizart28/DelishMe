@@ -23,6 +23,8 @@ namespace DelishMe.Web.ViewModels
         [Display(Name = "Category")]
         [Required]
         public byte? CategoryId { get; set; }
+
+        public HttpPostedFileBase ImageUpload { get; set; }
         public string Title
         {
             get

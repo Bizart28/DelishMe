@@ -9,6 +9,12 @@
     <li>Category: @Model.Category.Name</li>
     <li>Description: @Model.Description</li>
     <li>Date Added: @Model.DateAdded.ToLongDateString()</li>
-    
+
 </ul>
 
+@if (!string.IsNullOrEmpty(Model.ImagePath))
+{
+    <div class="form-group">
+        <img src="@Url.Content(Model.ImagePath)" alt="Dish Image" />
+    </div>
+}
