@@ -259,6 +259,10 @@
     <Compile Include="Migrations\202406081636445_SeedUsers.designer.cs">
       <DependentUpon>202406081636445_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406081951470_AddPhoneNumber.cs" />
+    <Compile Include="Migrations\202406081951470_AddPhoneNumber.designer.cs">
+      <DependentUpon>202406081951470_AddPhoneNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\18YearsValidation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -648,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406081636445_SeedUsers.resx">
       <DependentUpon>202406081636445_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406081951470_AddPhoneNumber.resx">
+      <DependentUpon>202406081951470_AddPhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
