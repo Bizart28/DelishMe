@@ -25,13 +25,15 @@ namespace DelishMe.Web
                       "~/Scripts/bootstrap.js",
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
-                        "~/scripts/typeahead.bundle.js"));
+                        "~/scripts/typeahead.bundle.js",
+                        "~/scripts/toastr.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/Content/style.css",
-                      "~/content/typeahead.css"));
+                      "~/content/typeahead.css",
+                      "~/content/toastr.css"));
         }
     }
 }
