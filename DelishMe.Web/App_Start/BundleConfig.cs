@@ -24,12 +24,14 @@ namespace DelishMe.Web
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                         "~/scripts/bootbox.js",
-                        "~/Scripts/respond.js"));
+                        "~/Scripts/respond.js",
+                        "~/scripts/typeahead.bundle.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
-                       "~/content/datatables/css/datatables.bootstrap.css",
-                      "~/Content/style.css"));
+                      "~/content/datatables/css/datatables.bootstrap.css",
+                      "~/Content/style.css",
+                      "~/content/typeahead.css"));
         }
     }
 }

@@ -24,7 +24,8 @@ namespace DelishMe.Web.Controllers
         // GET: Customers
         public ViewResult Index()
         {
-            return View();
+            if (User.IsInRole("CanManageDishes")) return View("List");
+            else return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)
@@ -37,6 +38,8 @@ namespace DelishMe.Web.Controllers
 
             return View(customer);
         }
+        [Authorize(Roles = RoleName.CanManageDishes)]
+
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -47,6 +50,8 @@ namespace DelishMe.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageDishes)]
+
         public ActionResult Save(Customer customer) {
             if (!ModelState.IsValid)
             {
@@ -80,6 +85,8 @@ namespace DelishMe.Web.Controllers
             return RedirectToAction("Index","Customers"); 
 
         }
+        [Authorize(Roles = RoleName.CanManageDishes)]
+
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

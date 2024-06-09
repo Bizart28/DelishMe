@@ -46,21 +46,7 @@ namespace DelishMe.Web.Controllers
 
         // GET: Dishes
         
-        public ActionResult Random()
-        {
-            var dish = new Dish() { Name = "Мамалыга"};
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer1"},
-                new Customer {Name = "Customer2"}
-            };
-            var viewModel = new RandomDishViewModel
-            {
-                Dish = dish,
-                Customers = customers
-            };
-            return View(viewModel);
-        }
+      
 
         [Authorize(Roles = RoleName.CanManageDishes)]
         public ViewResult New()
