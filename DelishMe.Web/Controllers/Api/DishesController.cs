@@ -20,10 +20,15 @@ namespace DelishMe.Web.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IEnumerable<DishDto> GetDishes()
+        public IEnumerable<DishDto> GetDishes(string query = null)
         {
-            return _context.Dishes
-                .Include(m => m.Category)
+            var dishesQuery = _context.Dishes
+                 .Include(m => m.Category);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                dishesQuery = dishesQuery.Where(m => m.Name.Contains(query));
+
+            return dishesQuery
                 .ToList()
                 .Select(Mapper.Map<Dish, DishDto>);
         }
