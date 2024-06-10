@@ -15,7 +15,7 @@
     min-height: 8px;
     max-height: 120px;
     width: 100%;
-    background-color: rgba(150, 182, 99, 0.57);
+    background-color: rgba(99, 72, 38, 0.40);
     margin-bottom: 5px;
     background-position: top;
     position: relative;
@@ -141,8 +141,8 @@ nav {
 }
 
     .hero-btn:hover {
-        border: 1px solid #3c0fae;
-        background: #3c0fae;
+        border: 1px solid rgba(99, 72, 38, 0.80);
+        background: rgba(99, 72, 38, 0.80);
         transition: 1s;
     }
 
@@ -191,11 +191,13 @@ nav .fa {
     margin: auto;
     text-align: center;
     padding-top: 100px;
+    background-color:;
 }
 
 h1 {
     font-size: 80px;
     font-weight: 800;
+    color:rgba(99, 72, 38, 0.80);
 }
 
 p {
@@ -460,10 +462,13 @@ h3 {
 
 .faq1 {
     text-align: center;
-    background-image: radial-gradient(rgba(235, 14, 51, 0.3),rgba(235, 146, 14, 0.3));
+    background-color: rgba(47, 62, 0, 0.52);
     background-position: center;
     background-size: cover;
     background-size: auto;
+}
+.faq1 h1{
+    font-size:20px;
 }
 
 .question {
