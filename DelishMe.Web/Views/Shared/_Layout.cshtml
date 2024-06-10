@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title>DelishMe</title>
 
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/style.css")
     @Scripts.Render("~/bundles/modernizr")
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
                 <h1>@ViewBag.Title</h1>
                 <section class="left">
                     <ul>
-                        <li><a href="/">HOME</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="@Url.Action("Index", "Customers")">Customers</a></li>
                         <li><a href="@Url.Action("Index", "Dishes")">Dishes</a></li>
                         <li><a href="@Url.Action("New", "Orders")">New Order</a></li>

@@ -5,6 +5,7 @@
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    vertical-align: -13px;
 }
 
 
@@ -13,8 +14,9 @@
 
 .header {
     min-height: 8px;
+    max-height: 120px;
     width: 100%;
-    background-image: linear-gradient(rgba(252, 252, 252, 0.85), rgba(252, 252, 252, 0.85)), url(../images/banner3.JPG); /*ZAMENITI*/
+   background-color:darkslategray;
     margin-bottom: 5px;
     background-position: top;
     position: relative;
@@ -23,16 +25,18 @@
 
 .left {
     float: left;
+    text-align: center;
 }
 
-.right {
+.navbar-nav navbar-right {
     float: right;
+    text-align: center;
 }
 
 
 .homepage {
     background-image: linear-gradient(rgb(37, 34, 28, 0.90), rgb(6, 15, 34, 0.90));
-    background-size:cover;
+    background-size: cover;
 }
 
 .home {
@@ -43,6 +47,7 @@
     background-size: cover;
     position: relative;
 }
+  
 
 
 
@@ -57,15 +62,10 @@ nav {
     align-items: center;
 }
 
-    nav img {                 /*LOGO*/
+    nav a { /*LOGO*/
         width: 45px;
     }
-    nav h11{
-        text-align:left;
-    }
-    nav h22{
-        text-align:right;
-    }
+
 
 .nav-links {
     flex: 1;
@@ -95,11 +95,11 @@ nav {
             transition: 0.5s;
         }
 
-        .nav-links filter li:hover::after {
-            width: 100%;
-        }
+    .nav-links filter li:hover::after {
+        width: 100%;
+    }
 
-      
+
 
 
 .text-box {
@@ -188,8 +188,8 @@ nav .fa {
 }
 
 h1 {
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 80px;
+    font-weight: 800;
 }
 
 p {
@@ -453,7 +453,7 @@ h3 {
 
 
 .faq1 {
-    text-align:center;
+    text-align: center;
     background-image: radial-gradient(rgba(235, 14, 51, 0.3),rgba(235, 146, 14, 0.3));
     background-position: center;
     background-size: cover;
@@ -472,9 +472,17 @@ h3 {
 
 .field-validation-error {
     color: red;
-
 }
 
 .input-validation-error {
     border: 2px solid red;
+}
+
+
+
+
+/*privacy*/
+
+.privacy{
+    background-color:olive;
 }
