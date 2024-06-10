@@ -491,3 +491,276 @@ h3 {
 
 
 
+/*login*/
+
+
+/* Основной контейнер */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1;
+    max-width: 60%;
+    margin-right: 20px;
+}
+
+.image-container {
+    flex: 1;
+    max-width: 35%;
+}
+
+h4 {
+    color: #2e7d32; /* Темно-зеленый цвет заголовка */
+    margin-bottom: 15px;
+}
+
+/* Метки */
+.col-form-label {
+    font-weight: bold;
+    color: #1b5e20; /* Темно-зеленый цвет для меток */
+    display: block; /* Сделаем метки блочными элементами */
+    margin-bottom: 5px;
+}
+
+/* Контейнер для полей ввода */
+.form-group {
+    margin-bottom: 10px; /* Уменьшили отступ между элементами формы */
+}
+
+/* Текстовые поля и поля ввода пароля */
+.form-control {
+    border: 1px solid #4caf50; /* Зеленая рамка */
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px; /* Уменьшили отступ снизу для текстовых полей */
+}
+
+    .form-control:focus {
+        border-color: #66bb6a; /* Более светлая зеленая рамка при фокусе */
+        box-shadow: 0 0 8px rgba(102, 187, 106, 0.6);
+    }
+
+/* Кнопка отправки */
+.btn-outline-dark {
+    color: #fff;
+    background-color: #4caf50; /* Зеленый цвет кнопки */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-outline-dark:hover {
+        background-color: #388e3c; /* Темно-зеленый цвет при наведении */
+    }
+
+/* Ссылки */
+a {
+    color: #2e7d32; /* Темно-зеленый цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #1b5e20; /* Более темный зеленый цвет при наведении */
+    }
+
+/* Ошибки валидации */
+.text-danger {
+    color: #d32f2f; /* Красный цвет для сообщений об ошибках */
+}
+
+/* Разделительная линия */
+hr {
+    border: 0;
+    height: 1px;
+    background: #4caf50; /* Зеленая линия */
+    margin-bottom: 20px;
+}
+
+/* Чекбокс и метка */
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Уменьшили отступ снизу для чекбокса */
+}
+
+    .checkbox label {
+        margin-left: 5px;
+        color: #1b5e20; /* Темно-зеленый цвет метки чекбокса */
+    }
+
+/* Стили для картинки сбоку */
+.side-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+/*manage*/
+
+
+/* Основной контейнер */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.content-container {
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки */
+h4 {
+    color: #2e7d32; /* Темно-зеленый цвет заголовка */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Таблица */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd; /* Серый цвет рамки */
+        text-align: left;
+    }
+
+    .styled-table th {
+        background-color: #4caf50; /* Зеленый фон заголовков таблицы */
+        color: #ffffff; /* Белый цвет текста */
+    }
+
+    .styled-table tr {
+        background-color: #ffffff; /* Белый фон для строк */
+        transition: background-color 0.3s ease;
+    }
+
+        .styled-table tr:hover {
+            background-color: #f1f8e9; /* Светло-зеленый фон при наведении */
+        }
+
+    .styled-table td:first-child {
+        font-weight: 500;
+    }
+
+/* Кнопки */
+.btn {
+    color: #fff;
+    background-color: #4caf50; /* Зеленый цвет кнопки */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Отступ снизу для кнопок */
+}
+
+    .btn:hover {
+        background-color: #388e3c; /* Темно-зеленый цвет при наведении */
+    }
+
+.btn-outline-dark {
+    color: #4caf50;
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .btn-outline-dark:hover {
+        background-color: #4caf50; /* Зеленый цвет при наведении */
+        color: #ffffff; /* Белый цвет текста при наведении */
+    }
+
+/* Ссылки */
+a {
+    color: #2e7d32; /* Темно-зеленый цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #1b5e20; /* Более темный зеленый цвет при наведении */
+    }
+
+/* Ошибки валидации */
+.text-danger {
+    color: #d32f2f; /* Красный цвет для сообщений об ошибках */
+}
+
+/* Сообщение об успешной операции */
+.text-success {
+    color: #388e3c; /* Зеленый цвет для успешных сообщений */
+}
+
+/* Разделительная линия */
+hr {
+    border: 0;
+    height: 1px;
+    background: #4caf50; /* Зеленая линия */
+    margin-bottom: 20px;
+}
+
+/* Контейнер для социальной авторизации */
+#socialLoginList {
+    margin-top: 20px;
+}
+
+/* Сообщение о настройке сервисов */
+.no-services {
+    background-color: #fff3cd; /* Светло-желтый фон */
+    border-left: 5px solid #ffecb5; /* Желтая левая граница */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+h4 {
+    font-size: 24px; /* Увеличение размера заголовков */
+}
+
+.styled-table,
+.styled-table th,
+.styled-table td,
+.btn,
+.btn-outline-dark,
+a {
+    font-size: 18px; /* Увеличение размера текста в таблицах, кнопках и ссылках */
+}
+
+.text-danger,
+.text-success {
+    font-size: 18px; /* Увеличение размера сообщений об ошибках и успешных операциях */
+}
