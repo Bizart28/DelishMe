@@ -1,20 +1,39 @@
-﻿
-@model DelishMe.Web.Models.Dish
+﻿@model DelishMe.Web.Models.Dish
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
-<ul>
-    <li>Category: @Model.Category.Name</li>
-    <li>Description: @Model.Description</li>
-    <li>Date Added: @Model.DateAdded.ToLongDateString()</li>
-
-</ul>
-
-@if (!string.IsNullOrEmpty(Model.ImagePath))
-{
-    <div class="form-group">
-        <img src="@Url.Content(Model.ImagePath)" alt="Dish Image" />
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-primary text-white rounded-top-3 p-2">
+                    <h3 class="card-title mb-0">@Model.Name</h3>
+                </div>
+                <div class="card-body p-3">
+                    <div class="row mb-2">
+                        <div class="col-md-12">
+                            <h5 class="card-subtitle mb-1 text-muted">Details</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item py-1"><strong>Category:</strong> @Model.Category.Name</li>
+                                <li class="list-group-item py-1"><strong>Description:</strong> @Model.Description</li>
+                                <li class="list-group-item py-1"><strong>Date Added:</strong> @Model.DateAdded.ToLongDateString()</li>
+                            </ul>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <img src="@Url.Content(Model.ImagePath)" alt="Dish Image" class="img-fluid rounded shadow-sm" style="max-height: 200px;" />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="card-footer bg-light rounded-bottom-3 p-2">
+                    <p class="text-muted mb-0">© 2024 DelishMe</p>
+                </div>
+            </div>
+        </div>
     </div>
-}
+</div>
