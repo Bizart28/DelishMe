@@ -764,3 +764,74 @@ a {
 .text-success {
     font-size: 18px; /* Увеличение размера сообщений об ошибках и успешных операциях */
 }
+
+
+
+
+/*new order*/
+
+
+
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.tt-container {
+    position: relative;
+}
+
+#dishes {
+    margin-top: 10px;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+    .list-group-item .remove-dish {
+        cursor: pointer;
+        color: red;
+    }
+
+.typeahead {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #555;
+}
+
+.tt-menu {
+    width: 100%;
+    margin-top: 2px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    line-height: 24px;
+}
+
+    .tt-suggestion.tt-cursor {
+        color: #fff;
+        background-color: #0097cf;
+    }
+
+    .tt-suggestion p {
+        margin: 0;
+    }

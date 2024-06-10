@@ -1,70 +1,124 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <title>DelishMe</title>
+﻿@model dynamic
 
-    @Styles.Render("~/Content/style.css")
-    @Scripts.Render("~/bundles/modernizr")
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-</head>
+<h2>New Order</h2>
 
-<body>
-    <div class="header">
-        <nav>
-            <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a>
-            <div class="nav-links" id="navLinks">
-                <box-icon name='window-close'></box-icon><!--заменить иконки-->
-                <h1>@ViewBag.Title</h1>
-                <section class="left">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="@Url.Action("Index", "Customers")">Customers</a></li>
-                        <li><a href="@Url.Action("Index", "Dishes")">Dishes</a></li>
-                        <li><a href="@Url.Action("New", "Orders")">New Order</a></li>
-                        <li><a href="@Url.Action("FAQ", "Home")">FAQ</a></li>
-                        <li><a href="@Url.Action("Privacy", "Home")">Privacy</a></li>
-                    </ul>
-                </section>
-                <section class="right">
-                    <h2>@ViewBag.Title</h2>
-                    <ul>
-                        @Html.Partial("_LoginPartial")
-                    </ul>
-                </section>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i> <!--заменить иконки-->
-        </nav>
+<form id="newOrder">
+    <div class="form-group">
+        <label>Customer</label>
+        <div class="tt-container">
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control typeahead" />
+        </div>
     </div>
 
-    <!-- Область, где будет вставлено содержимое каждого конкретного представления -->
-    <main>
-        @RenderBody()
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </main>
-
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container text-center">
-            <span class="text-muted">
-                &copy; @DateTime.Now.Year DelishMe. Все права защищены.
-            </span>
-            <div>
-                <a href="https://www.instagram.com/yelimlizza/" target="_blank">Instagram</a> |
-                <a href="https://t.me/bizarrrt" target="_blank">Telegram</a>
-            </div>
+    <div class="form-group">
+        <label>Dish</label>
+        <div class="tt-container">
+            <input id="dish" name="dish" data-rule-atLeastOneDish="true" type="text" value="" class="form-control typeahead" />
         </div>
-    </footer>
+    </div>
 
-    <script src="~/Scripts/index.js"></script>
-</body>
-</html>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <ul id="dishes" class="list-group"></ul>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+<link href="~/Content/style.css" rel="stylesheet" />
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            var vm = {
+                dishIds: []
+            };
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                name: 'customers',
+                display: 'name',
+                source: customers
+            }).on("typeahead:select", function (e, customer) {
+                vm.customerId = customer.id;
+            });
+
+            var dishes = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/dishes?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#dish').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                name: 'dishes',
+                display: 'name',
+                source: dishes
+            }).on("typeahead:select", function (e, dish) {
+                var dishItem = "<li class='list-group-item'>" + dish.name + "<span class='remove-dish'>&times;</span></li>";
+                $("#dishes").append(dishItem);
+                $("#dish").typeahead("val", "");
+                vm.dishIds.push(dish.id);
+            });
+
+            $(document).on("click", ".remove-dish", function () {
+                var index = $(this).parent().index();
+                vm.dishIds.splice(index, 1);
+                $(this).parent().remove();
+            });
+
+            $.validator.addMethod("validCustomer", function () {
+                return vm.customerId && vm.customerId !== 0;
+            }, "Please select a valid customer.");
+
+            $.validator.addMethod("atLeastOneDish", function () {
+                return vm.dishIds.length > 0;
+            }, "Please select at least one dish.");
+
+            var validator = $("#newOrder").validate({
+                submitHandler: function () {
+                    $.ajax({
+                        url: "/api/newOrders",
+                        method: "post",
+                        data: vm
+                    })
+                        .done(function () {
+                            toastr.success("Order successfully recorded.");
+                            $("#customer").typeahead("val", "");
+                            $("#dish").typeahead("val", "");
+                            $("#dishes").empty();
+                            vm = { dishIds: [] };
+                            validator.resetForm();
+                        })
+                        .fail(function () {
+                            toastr.error("Something unexpected happened.");
+                        });
+                    return false;
+                }
+            });
+        });
+    </script>
+}
