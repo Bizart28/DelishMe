@@ -15,68 +15,60 @@
             <a href="/" class="hero-btn">Visit us to know more</a>
         </div>
     </section>
-   
+
 
     <!--campus----->
     <section class="campus">
         <h1>Наши лучшие предложения</h1>
         <p>Попробуй самые популярные блюда этой недели!</p>
         <div class="row">
-            <div class="campus-col">
-                <img src="/images/zakuska1.png">
-                <div class="layer">
-                    <h3>eda1</h3>
+            @foreach (var dish in Model) // Выводим только три блюда
+            {
+                <div class="campus-col">
+                    <img src="@Url.Content(dish.ImagePath)" alt="@dish.Name">
+                    <div class="layer">
+                        <h3>@dish.Name</h3>
+                        <p>@dish.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+
+
+    <!--testimonials можно вставить наши с артемом фотки))))-->
+    <section class="testimonials">
+        <h1>Что говорят наши разработчики</h1>
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="~/images/user2.png">
+                <div>
+                    <p>Лиза говорит, что:</p>
+                    <h3>Моя жизнь стала лучше, когда я попробовала себя в роли разработчика такого интересного веб-сервиса</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <!--иконки не отображаются -->
                 </div>
             </div>
-            <div class="campus-col">
-                <img src="/images/zakuska2.png">
-                <div class="layer">
-                    <h3>eda2</h3>
-                </div>
-            </div>
-            <div class="campus-col">
-                <img src="/images/zakuska3.png">
-                <div class="layer">
-                    <h3>eda3</h3>
+            <div class="testimonials-col">
+                <img src="~/images/user.png">
+                <div>
+                    <p>Артем рассказывает:</p>
+                    <h3>Это был интересный, сложный и незабываемый опыт!</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <!--иконки не отображаются -->
                 </div>
             </div>
         </div>
     </section>
-
-   
-
-        <!--testimonials можно вставить наши с артемом фотки))))-->
-        <section class="testimonials">
-            <h1>Что говорят наши разработчики</h1>
-            <div class="row">
-                <div class="testimonials-col">
-                    <img src="~/images/user2.png">
-                    <div>
-                        <p>Лиза говорит, что:</p>
-                        <h3>Моя жизнь стала лучше, когда я попробовала себя в роли разработчика такого интересного веб-сервиса</h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <!--иконки не отображаются -->
-                    </div>
-                </div>
-                <div class="testimonials-col">
-                    <img src="~/images/user.png">
-                    <div>
-                        <p>Артем рассказывает:</p>
-                        <h3>Это был интересный, сложный и незабываемый опыт!</h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <!--иконки не отображаются -->
-                    </div>
-                </div>
-            </div>
-        </section>
     </section>
 
 
