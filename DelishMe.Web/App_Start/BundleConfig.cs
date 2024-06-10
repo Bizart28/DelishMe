@@ -28,12 +28,14 @@ namespace DelishMe.Web
                         "~/scripts/typeahead.bundle.js",
                         "~/scripts/toastr.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/style.css").Include(
                       "~/Content/bootstrap-lumen.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/Content/style.css",
                       "~/content/typeahead.css",
                       "~/content/toastr.css"));
+            bundles.Add(new StyleBundle("~/Content/privacy.css").Include(
+                "~/Content/privacy.css"));
         }
     }
 }

@@ -5,7 +5,6 @@
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    vertical-align: -13px;
 }
 
 
@@ -16,11 +15,18 @@
     min-height: 8px;
     max-height: 120px;
     width: 100%;
-   background-color:darkslategray;
+    background-color: rgba(150, 182, 99, 0.57);
     margin-bottom: 5px;
     background-position: top;
     position: relative;
 }
+
+
+    .header nav a img {
+        max-width: 100%;
+        height: auto;
+    }
+
 
 
 .left {
@@ -480,9 +486,3 @@ h3 {
 
 
 
-
-/*privacy*/
-
-.privacy{
-    background-color:olive;
-}
