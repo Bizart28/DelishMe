@@ -1,25 +1,41 @@
 ﻿@model IEnumerable<DelishMe.Web.Models.Dish>
 
 @{
-
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Dishes</h2>
-<table id="dishes" class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Dish</th>
-            <th>Category</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+<div class="container mt-5">
+    <p>
+        @Html.ActionLink("New Dish", "New", "Dishes", null, new { @class = "btn btn-success mb-3" })
+    </p>
+
+    <h2>Dishes</h2>
+
+    <div class="table-responsive">
+        <table id="dishes" class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Dish</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 @section scripts
 {
-    <script>$(document).ready(function () {
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
             var table = $("#dishes").DataTable({
+                paging: true,
+                pageLength: 10,
+                lengthChange: true,
                 ajax: {
                     url: "/api/dishes",
                     dataSrc: ""
@@ -32,10 +48,10 @@
                         }
                     },
                     {
-                        data: "category.name" 
+                        data: "category.name"
                     }
-                  
                 ]
-            }); 
-        });</script>
+            });
+        });
+    </script>
 }

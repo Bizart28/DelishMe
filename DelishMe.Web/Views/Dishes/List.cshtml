@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<DelishMe.Web.Models.Dish>
 
 @{
-
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <p>
     @Html.ActionLink("New Dish", "New", "Dishes", null, new { @class = "btn btn-primary" })
 </p>
@@ -20,9 +20,15 @@
     <tbody>
     </tbody>
 </table>
+
 @section scripts
 {
-    <script>$(document).ready(function () {
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+
+    <script>
+        $(document).ready(function () {
             var table = $("#dishes").DataTable({
                 ajax: {
                     url: "/api/dishes",
@@ -36,7 +42,7 @@
                         }
                     },
                     {
-                        data: "category.name" 
+                        data: "category.name"
                     },
                     {
                         data: "id",
@@ -46,6 +52,7 @@
                     }
                 ]
             });
+
             $("#dishes").on("click", ".js-delete", function () {
                 var button = $(this);
                 bootbox.confirm("Are you sure you want to delete this dish?", function (result) {
@@ -60,5 +67,6 @@
                     }
                 });
             });
-        });</script>
+        });
+    </script>
 }
